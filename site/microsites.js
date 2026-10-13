@@ -1,6 +1,6 @@
-const current = location.pathname.split('/').pop();
+const current = location.pathname.replace(/\/$/, '').split('/').pop().replace(/\.html$/, '');
 document.querySelectorAll('.micro-header nav a').forEach(link => {
-  if (link.getAttribute('href') === current) link.setAttribute('aria-current', 'page');
+  if (link.getAttribute('href').replace(/^\//, '').replace(/\.html$/, '') === current) link.setAttribute('aria-current', 'page');
 });
 document.querySelectorAll('[data-filter]').forEach(button => {
   button.addEventListener('click', () => {
