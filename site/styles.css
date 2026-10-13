@@ -46,14 +46,13 @@ body {
   display: inline-flex; align-items: center; flex-shrink: 0;
   color: var(--ink); text-decoration: none;
 }
-/* Display the approved image's artwork without its presentation margins. */
+/* The logo asset has a cropped viewport and safe intrinsic dimensions. */
 .brand-logo {
   position: relative; display: block; overflow: hidden;
   width: 184px; height: 47px;
 }
 .brand-logo img {
-  position: absolute; width: 241px; height: auto; max-width: none;
-  left: -32px; top: -35px;
+  display: block; width: 100%; height: auto; max-width: 184px;
 }
 :where(a, button):focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
 h1, h2, h3 { font-weight: 900; }
@@ -172,7 +171,7 @@ h2 { font-size: clamp(1.6rem, 3.5vw, 2.2rem); letter-spacing: -.015em; }
 @media (max-width: 420px) {
   .nav { gap: 12px; }
   .nav .brand-logo { width: 150px; height: 39px; }
-  .nav .brand-logo img { width: 196.5px; left: -26px; top: -28.5px; }
+  .nav .brand-logo img { width: 100%; }
   .nav .btn-sm { padding: 8px 10px; font-size: .8rem; }
 }
 
